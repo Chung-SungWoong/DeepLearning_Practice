@@ -13,7 +13,7 @@ seed = 0
 numpy.random.seed(seed)
 tf.random.set_seed(seed)
 
-#df = pd.read_csv('/Users/chung_sungwoong/Desktop/Practice/DeepLearning_Practice/dataset/iris.csv', names = ['special_length','sepal_width','petal_length','petal_width','species'])
+#df = pd.read_csv('/Users/jhung_sungwoong/Desktop/Practice/DeepLearning_Practice/dataset/iris.csv', names = ['special_length','sepal_width','petal_length','petal_width','species'])
 df = pd.read_excel('/Users/chung_sungwoong/Desktop/Check2.xlsx', names = ['accuracy','time','user'])
 
 dataset = df.values

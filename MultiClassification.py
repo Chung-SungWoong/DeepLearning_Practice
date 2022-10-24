@@ -11,7 +11,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 #df = pd.read_csv('/Users/chung_sungwoong/Desktop/Practice/DeepLearning_Practice/dataset/iris.csv', names = ['special_length','sepal_width','petal_length','petal_width','species'])
-df = pd.read_excel('/Users/chung_sungwoong/Desktop/Check.xlsx', names = ['accuracy','time','user'])
+df = pd.read_excel('/Users/chung_sungwoong/Desktop/Check2.xlsx', names = ['accuracy','time','user'])
 #print(df.head())
 sns.pairplot(df,hue='user')
 plt.show()
