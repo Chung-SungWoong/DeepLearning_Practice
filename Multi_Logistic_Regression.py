@@ -43,7 +43,7 @@ with tf.compat.v1.Session() as sess:
     new_x = np.array([7,6.]).reshape(1,2)       
     new_y = sess.run(y, feed_dict= {X: new_x})
 
-    print("공부한 시간: %d, 과외 수업 횟수: %d" % (new_x[:,0], new_x[:,1]))
+    print("공부한 시간: %d, 과외 수업 횟수: %d" % (new_x[:,0], new_x[:,1]))         # x[:,0] , x[:,1] 은 가로축 세로축을 의미
     print("합격 가능성: %6.2f %%" %(new_y* 100))
 
 """
