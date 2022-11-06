@@ -9,6 +9,7 @@ Overfitting
 from keras.models import Sequential
 from keras.layers.core import Dense
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
 
 import pandas as pd 
 import numpy
@@ -28,6 +29,7 @@ e = LabelEncoder()
 e.fit(y_obj)
 y = e.transform(y_obj)
 
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=seed)     #학습셋과 테스트셋의 구분
 
 model = Sequential()
 model.add(Dense(24, input_dim = 60, activation='relu'))
@@ -36,6 +38,6 @@ model.add(Dense(1,activation='sigmoid'))
 
 model.compile(loss='mean_squared_error', optimizer = 'adam', metrics= ['accuracy'])
 
-model.fit(x,y,epochs = 200, batch_size = 5)
+model.fit(x,y,epochs = 130, batch_size = 5)
 
 print("\n Accuracy: %.4f" %(model.evaluate(x,y)[1]))
