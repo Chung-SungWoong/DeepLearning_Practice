@@ -9,7 +9,8 @@ Overfitting
 from keras.models import Sequential
 from keras.layers.core import Dense
 from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split    #학습셋과 테스트셋 나누기
+from keras.models import load_model                     #모델로 저장하기
 
 import pandas as pd 
 import numpy
@@ -40,4 +41,8 @@ model.compile(loss='mean_squared_error', optimizer = 'adam', metrics= ['accuracy
 
 model.fit(x,y,epochs = 130, batch_size = 5)
 
+model.save('my_model.h5')
+
+# model = load_model('my_model.h5')
+# 모델 불러오기
 print("\n Accuracy: %.4f" %(model.evaluate(x,y)[1]))
