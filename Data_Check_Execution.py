@@ -11,8 +11,3 @@ df = df_pre.sample(frac=1)
 print(df.head(5))
 
 print(df.info())        # 총 6497개의 샘플이 있고 13개의 속성이 무엇인지 알 수 있음
-
-dataset = df.values
-
-X = dataset[:,0:12]
-Y = dataset[:,12]

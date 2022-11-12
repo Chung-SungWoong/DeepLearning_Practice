@@ -52,3 +52,13 @@ plt.plot(x_len,y_vloss, "o", c='red', markersize = 3)
 plt.plot(x_len,y_acc, "o", c='blue', markersize = 3)
 
 plt.show()
+
+"""
+학습이 진행될수록 정확도는 올라가지만 과적합으로 실험 결과는 점점 나빠지게 된다
+이렇게 테스트셋 오차가 줄지 않으면 학습을 멈추게 하는 함수가 있다
+from keras.callbacks immport EarlyStopping
+EarlyStopping()
+early_stopping_callback = EarlyStopping(monitor='val_loss', patience=100)
+
+model.fit(X,Y, validation_split = 0.33, epochs = 3500, batch_size = 500, callbacks = [early_stopping_callback])
+"""
