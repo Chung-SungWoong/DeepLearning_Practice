@@ -19,4 +19,7 @@ model.add(MaxPooling2D(pool_size=2))
 """
 
 #Drop out
-model.add(Dropout(0.25))
+model.add(Dropout(0.25))    # 25%의 노드를 끄기
+
+#2차원 배열을 다시 1차원으로 바꿔주는 함수가 Flatten()
+model.add(Flatten())
