@@ -8,6 +8,7 @@ from keras.datasets import reuters
 from keras.preprocessing import sequence
 from keras.models import Sequential
 from keras.layers import Dense, Embedding, LSTM
+import matplotlib.pyplot as plt
 
 (x_train, y_train), (x_test, y_test) = reuters.load_data(num_words=1000, test_split=0.2)
 """
@@ -39,3 +40,18 @@ model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = [
 history = model.fit(x_train,y_train, batch_size = 100, epochs = 20, validation_data=(x_test, y_test))
 
 print("\n Test Accuracy: %.f" % (model.evaluate(x_test,y_test)[1]))
+
+y_vloss = history.history['val_loss']
+
+y_loss = history.history['loss']
+
+x_len = numpy.arange(len(y_loss))
+
+plt.plot(x_len, y_vloss, marker='.', c = 'red', label='Testset_loss')
+plt.plot(x_len, y_loss, marker = '.', c= "blue", label = 'Trainset_loss')
+
+plt.legend(loc='upper right')
+plt.grid()
+plt.xlabel('epoch')
+plt.ylabel('loss')
+plt.show()
